@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Kartu Wi-Fi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Generator Kartu Wi-Fi</h1>
+            <p>Masukkan detail Wi-Fi Anda untuk membuat kartu QR yang dapat dipindai.</p>
+        </header>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label for="ssid">Nama Wi-Fi (SSID):</label>
+                <input type="text" id="ssid" placeholder="Contoh: WiFiRumahKu" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Masukkan password Anda">
+                <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+            </div>
+            <div class="input-group">
+                <label for="encryption">Tipe Enkripsi:</label>
+                <select id="encryption">
+                    <option value="WPA" selected>WPA/WPA2</option>
+                    <option value="WEP">WEP</option>
+                    <option value="nopass">Tidak Ada (Terbuka)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="hiddenSsid" class="checkbox-label">
+                    <input type="checkbox" id="hiddenSsid">
+                    SSID Tersembunyi
+                </label>
+            </div>
+            <div class="input-group">
+                <label for="hidePasswordOnCard" class="checkbox-label">
+                    <input type="checkbox" id="hidePasswordOnCard">
+                    Sembunyikan Password di Kartu (QR tetap berisi password)
+                </label>
+            </div>
+            <div class="button-group">
+                <button id="generateBtn">Buat Kartu Wi-Fi</button>
+                <button id="resetBtn" type="button">Reset</button>
+            </div>
+        </div>
+
+        <div class="wifi-card-container" id="wifiCardContainer" style="display:none;">
+            <h2>Pindai untuk Terhubung</h2>
+            <div class="wifi-card" id="captureArea">
+                <div class="qr-code-area">
+                    <div id="qrcode"></div>
+                </div>
+                <div class="wifi-details">
+                    <p><strong>Jaringan:</strong> <span id="cardSsid"></span></p>
+                    <p><strong>Password:</strong> <span id="cardPassword"></span></p>
+                    <p class="scan-instruction">Pindai kode QR ini dengan kamera ponsel Anda untuk terhubung ke Wi-Fi secara otomatis.</p>
+                </div>
+            </div>
+            <button id="downloadBtn" style="display:none;">Unduh Kartu Wi-Fi</button>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Wadi Wahyudin</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
