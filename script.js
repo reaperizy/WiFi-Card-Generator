@@ -162,9 +162,9 @@ function togglePasswordVisibility() {
     const toggleIcon = document.querySelector('.toggle-password');
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        toggleIcon.textContent = '🙈';
+        toggleIcon.textContent = '👁️';
     } else {
         passwordInput.type = 'password';
-        toggleIcon.textContent = '👁️';
+        toggleIcon.textContent = '🙈';
     }
 }
