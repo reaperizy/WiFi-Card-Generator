@@ -87,17 +87,18 @@ header p {
     vertical-align: middle;
 }
 
-
+/* === PERBAIKAN DI SINI === */
 .toggle-password {
     position: absolute;
     right: 15px;
-    top: calc(50% + 10px); 
-    transform: translateY(calc(50% - 2px)); 
+    top: 71%; /* Adjusted for better vertical alignment with the input field */
+    transform: translateY(-50%); /* Vertically centers the icon itself */
     cursor: pointer;
     user-select: none;
     font-size: 1.2em;
     color: #7f8c8d;
 }
+/* === AKHIR PERBAIKAN === */
 
 .button-group {
     display: flex;
@@ -254,7 +255,13 @@ footer {
     .wifi-details p {
         font-size: 1em;
     }
+    /*
     .toggle-password {
-        top: calc(50% + 8px); 
+        top: calc(50% + 8px);
     }
+    */ /* Komentari atau hapus penyesuaian 'top' toggle-password di media query ini
+         agar tidak menimpa pengaturan 'top: 71%' yang baru, kecuali jika memang
+         diperlukan penyesuaian spesifik untuk layar kecil.
+         Jika ikonnya pas di layar besar dan kecil dengan 'top: 71%', maka tidak perlu ada di sini.
+      */
 }
